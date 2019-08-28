@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .container{
+            margin-top: 100px;
+            padding-right: 100px;
+        }
+
+        body{
+       background-image: url(https://img.freepik.com/free-photo/empty-perspective-wood-plank-table-top-with-abstract-bokeh-light-background-montage-your-product_55710-159.jpg?size=626&ext=jpg);
+       background-size: cover;
+      background-attachment: fixed;
+      background-position: center center;
+      opacity:0.8;
+        }
+
+
+    </style>
+</head>
+<body>
+    {{>header}}
+
+    <div class="container">
+    {{#if products}}
+       <div class="row">
+        <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3">
+            <ul class="list-group">
+                {{#each products}}
+                 <li class="list-group-item">
+                    <strong style="font-size: 20px;">{{this.item.title}}</strong>
+                    <span class="badge badge-success" style="font-size: 15px;"><i class="fas fa-rupee-sign"></i> {{this.price}}</span>
+                    <div class="btn btn-group">
+                        <button class="btn btn-primary btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Action<span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="/reduce/{{this.item._id}}">Remove 1</a></li>
+                            <li><a href="/remove/{{this.item._id}}">Remove all</a></li>
+                        </ul>
+                    </div>
+
+                    <span class="badge badge-secondary" style="font-size: 17px; margin-left:100px;">{{this.qty}}</span>
+
+                </li>
+                {{/each}}
+                
+            </ul>
+        </div>
+    </div>
+
+    <br>
+    <div class="row">
+        <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3">
+           <strong style="font-size: 20px;"><b>Total: {{totalPrice}}</b></strong>
+        </div>
+    </div>
+
+    <hr>
+    <div class="row">
+        <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3">
+           <a  href="/payment" class="btn btn-success btn-lg" type="button">Checkout</a>
+        </div>
+    </div>
+
+    </div>
+
+
+    {{else}}
+
+    <div class="container">    
+        <div class="row">
+        <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3">
+           <h2>No items in cart</h2>
+        </div>
+        </div>
+    </div>
+
+    {{/if}}    
+    
+</body>    
+</html>

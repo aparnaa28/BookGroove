@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+      th{
+        background-color: lightgrey;
+        font-size: 20px;
+      }
+
+      .search-container{
+        margin-top: 30px;
+        margin-left: 30px;
+      }
+    </style>
+</head>
+<body>
+    {{>header}}
+    
+          <div class="search-container"> 
+              <form>
+              <input type="text" placeholder="Search.." name="search">
+              <button type="submit"><i class="fa fa-search"></i></button>
+              </form>
+          </div>
+          <br>
+          <br>
+
+    <table width="100%" border="2" cellspacing="6" cellpadding="6">
+          <thead>
+            <tr>
+            <th align="center">Image</th>
+            <th align="center">Bookname</th>
+            <th align="center">Authorname</th>
+            <th align="center">Description</th>
+            <th align="center">Category</th>
+            <th align="center">Language</th>
+            <th align="center">Purchase Date</th>
+            <th align="center"> Book condition</th>
+            <th align="center">Price</th>
+            <th align="center">Selling date</th>
+            <th align="center">Book status</th>
+            </tr>
+          </thead>
+
+            
+
+            {{#each books}}
+
+            <tr>
+            <td><image src="{{this.image}}" height="130px" width="100px"></image></td>
+            <td>{{this.bookname}}</td>
+            <td>{{this.authorname}}</td>
+            <td>{{this.description}}</td>
+            <td>{{this.category}}</td>
+            <td>{{this.language}}</td>
+            <td>{{this.date}}</td>
+            <td>{{this.condition}}</td>
+            <td>{{this.price}}</td>
+            </tr>
+
+            {{/each}}
+            
+    </table>
+
+  
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+      form{
+          margin-top: 50px;
+      }
+    </style>
+</head>
+<body>
+    {{>header}}
+    <form action="/sell" method="POST">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label >Bookname</label>
+      <input type="text" class="form-control" id="bookname" name="bookname" placeholder="Enter bookname">
+    </div>
+    <div class="form-group col-md-6">
+      <label>Authorname</label>
+      <input type="text" class="form-control" id="author" name="authorname" placeholder="Enter authorname">
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Category</label>
+    <select class="form-control" id="category" name="category">
+      <option>Science</option>
+      <option>Drama</option>
+      <option>Action and Adventure</option>
+      <option>Romance</option>
+      <option>Mystery</option>
+      <option>Horror</option>
+      <option>Health</option>
+      <option>Travel</option>
+      <option>Children</option>
+      <option>Math</option>
+      <option>History</option>
+      <option>Autobiographies</option>
+      <option>Biographies</option>
+      <option>Other</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Description</label>
+    <input type="text" class="form-control" id="description" name="description" placeholder="Enter the description of the book">
+  </div>
+<div class="form-row">
+    <div class="form-group col-md-3">
+      <label>Purchase Date</label>
+      <input type="text" class="form-control" id="date" name="date">
+    </div>
+    <div class="form-group col-md-3">
+      <label>Price</label>
+      <input type="number" id="price" name="price" class="form-control">
+    </div>
+    <div class="form-group col-md-3">
+      <label>Book Condition</label>
+     <select class="form-control" id="condition" name="condition">
+         <option>New</option>
+         <option>Good</option>
+         <option>Fair</option>
+         <option>Poor</option>
+     </select>
+    </div>
+
+     <div class="form-group col-md-3">
+      <label for="inputZip">Book Language</label>
+     <select class="form-control" id="language" name="language">
+         <option>English</option>
+         <option>Hindi</option>
+     </select>
+    </div>
+
+</div>
+     <div class="form-group">
+    <label>Upload Image</label>
+    <input type="text" name="image" class="form-control" id="inputAddress2">
+  </div>
+<br>
+  <button type="submit" class="btn btn-primary" id="button">SUBMIT</button>
+</form>
+</body>
+</html>

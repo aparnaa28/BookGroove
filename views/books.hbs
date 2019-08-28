@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+
+    .carousel-item>img{
+      height:400px;
+      width:100%;
+    }
+
+    .product{
+            max-height: 220px;
+            max-width: 200px;
+            margin-left: 75px;
+            margin-right: 50px;
+      }
+
+    #carouselExampleIndicators{
+     
+     height:400px;
+     width:100%;
+    }
+
+     .atag{
+      color: antiquewhite;
+    }
+
+    .atag:hover{
+      color:antiquewhite;
+    }
+
+    .carousel-caption{
+      margin-bottom: 200px;
+      font-family: 'Pacifico', cursive;
+      font-size:60px;
+    }
+
+   
+
+    </style>
+</head>
+<body>
+    {{>header}}
+
+     <div class="row">
+    <div class="col-sm-12">
+     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="9"></li>
+    
+  
+  </ol>
+  <div class="carousel-inner">
+    <!--literature and fiction-->
+    <div class="carousel-item active">
+      <img src="http://getwallpapers.com/wallpaper/full/0/7/d/263156.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+          <a class="atag" href="/literature">Literature and Fiction</a>
+        </div>
+    </div>
+    <div class="carousel-item">
+     <!-- science-->
+        <img src="https://www.snopes.com/tachyon/2017/12/science-stock-image.png?resize=865,452" class="d-block w-100">
+    </div>
+    <div class="carousel-item"> <!--romance-->
+      <img src="https://images.glaciermedia.ca/polopoly_fs/1.23815501.1557333290!/fileImage/httpImage/image.jpg_gen/derivatives/landscape_804/pixabay-stock-photo-heart-romance.jpg" class="d-block w-100" alt="...">
+    </div>
+    
+    <div class="carousel-item">
+     <!-- horror-->
+        <img src="https://st3.depositphotos.com/11117316/16974/v/600/depositphotos_169741574-stock-video-spooky-moon-background-tree-silhouette.jpg" class="d-block w-100">
+    </div>
+    
+    <div class="carousel-item">
+      <!--children-->
+      <img src="https://previews.123rf.com/images/kankhem/kankhem1705/kankhem170500008/78757586-happy-kids-jumping-together-during-a-sunny-day.jpg" class="d-block w-100" alt="...">
+    </div>
+
+    <div class="carousel-item">
+     <!-- health-->
+        <img src="https://cdn.cnn.com/cnnnext/dam/assets/190116155358-03-new-diet-to-save-lives-and-planet-health-study-intl-file-restricted-use-super-tease.jpg" class="d-block w-100">
+    </div>
+
+     <div class="carousel-item">
+     <!-- travel-->
+        <img src="https://www.goldentickettravel.co.uk/media/2929236/profile_picture-perfect_january-2018_banner.jpg?anchor=center&mode=crop&width=880&height=364&rnd=132003988660000000" class="d-block w-100">
+    </div>
+
+     <div class="carousel-item">
+     <!--action and adventure-->
+        <img src="https://i.ytimg.com/vi/tuWgZtAItAc/maxresdefault.jpg" class="d-block w-100">
+    </div>
+
+     <div class="carousel-item">
+     <!-- history-->
+        <img src="https://www.qmul.ac.uk/media/qmul-course-images/ug/sllf/header-images/history-and-comparative-literature.jpg" class="d-block w-100">
+    </div>
+
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+  </div>
+
+    {{#each products}}
+        <div class="row" style="margin-top: 50px;">
+            {{#each this}}
+                <div class="col-3 card text-center" style="width: 22rem;">
+                <img class="product" src="{{this.imagePath}}" class="card-img-top img-responsive">
+                <div class="card-body">
+                <h5 class="card-title" style="text-align: center">{{this.title}}</h5>
+                <p><i class="fas fa-rupee-sign"></i>{{this.price}}</p>
+                <a href="/add-to-cart/{{this._id}}" class="btn btn-success">BUY</a>
+                </div>
+                </div>
+
+            {{/each}}
+            
+     </div>
+    {{/each}}
+       
+
+</body>
+</html>

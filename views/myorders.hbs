@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+
+        .container{
+            margin-top: 50px;
+        }
+      
+        body{
+       background-image: url(https://img.freepik.com/free-photo/empty-perspective-wood-plank-table-top-with-abstract-bokeh-light-background-montage-your-product_55710-159.jpg?size=626&ext=jpg);
+       background-size: cover;
+      background-attachment: fixed;
+      background-position: center center;
+      opacity:0.8;
+        }
+
+        span{
+            margin-left: 30px;
+        }
+
+
+    </style>
+</head>
+<body>
+    {{>header}}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-offset-2">
+                <h1>My Orders</h1>
+                <br>
+                {{#each orders}}
+                  <div class="panel panel-default">
+                      <div class="panel-body">
+                          <ul class="list-group">
+                              {{#each this.items}}
+                                <li class="list-group-item">>
+                                    {{this.item.title}} | {{this.qty}} Units
+                                    <span class="badge badge-primary"><i class="fas fa-rupee-sign"></i>{{this.price}}</span>
+                                </li>
+                              {{/each}}
+
+                            
+                          </ul>
+                      </div>
+                      <div class="panel-footer">
+                          <strong>Total Price: {{this.cart.totalprice}}</strong>
+                          <hr>
+                      </div>
+                  </div>
+                {{/each}}
+            </div> 
+        </div>
+    </div>
+</body>    
